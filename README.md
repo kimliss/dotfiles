@@ -86,6 +86,7 @@ cd ~/.dotfiles
 
 ## 📁 目录结构
 
+```txt
 dotfiles/
 ├── install.sh              # 安装脚本
 ├── uninstall.sh           # 卸载脚本
@@ -99,6 +100,7 @@ dotfiles/
 │       ├── gitconfig      # Git 配置
 │       └── gitignore_global  # 全局忽略
 └── backup/                # 备份目录
+```
 
 ## 🔄 更新配置
 ```bash

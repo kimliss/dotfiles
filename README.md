@@ -85,3 +85,40 @@ cd ~/.dotfiles
 3. 保留 dotfiles 目录和备份文件
 
 ## 📁 目录结构
+
+dotfiles/
+├── install.sh              # 安装脚本
+├── uninstall.sh           # 卸载脚本
+├── config/
+│   ├── zshrc.d/           # zsh 配置模块
+│   │   ├── loader.zsh     # 自动加载器
+│   │   ├── proxy.zsh      # 代理管理
+│   │   ├── aliases.zsh    # 命令别名
+│   │   └── env.zsh        # 环境变量
+│   └── git/
+│       ├── gitconfig      # Git 配置
+│       └── gitignore_global  # 全局忽略
+└── backup/                # 备份目录
+
+## 🔄 更新配置
+```bash
+cd ~/.dotfiles
+git pull
+source ~/.zshrc
+```
+
+## 💡 工作原理
+
+本配置使用**引用机制**而非直接修改配置文件：
+
+- `.zshrc` 中添加一行 `source` 语句引用 dotfiles
+- `.gitconfig` 中添加 `[include]` 引用 dotfiles
+- 卸载时只需删除引用行，不影响其他配置
+
+## 📝 许可证
+
+MIT License
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！

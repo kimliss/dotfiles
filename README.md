@@ -1,74 +1,87 @@
-# My Dotfiles
+# My Dotfiles 🚀
 
-🚀 个人开发环境配置文件，支持一键安装。
+个人开发环境配置文件，支持一键安装和卸载。
 
-## 特性
+## ✨ 特性
 
-- ✅ zsh 代理快速开关
-- ✅ Git 常用配置
-- ✅ 常用命令别名
-- ✅ 自动备份现有配置
-- ✅ 交互式安装
+- ✅ **模块化设计** - 配置文件独立管理，互不影响
+- ✅ **一键安装/卸载** - 简单快速，自动备份
+- ✅ **代理快速开关** - 支持终端和 Git 代理
+- ✅ **丰富的命令别名** - 提高终端效率
+- ✅ **Git 增强配置** - 美化日志，实用别名
+- ✅ **安全备份** - 安装前自动备份原有配置
 
-## 快速安装
+## 🚀 快速开始
 
-### 方式一：一键安装（推荐）
+### 方式一：远程安装（推荐）
 ```bash
-curl -fsSL https://raw.githubusercontent.com/kimliss/dotfiles/main/install.sh | bash
-```
-
-### 方式二：手动安装
-```bash
-# 克隆仓库
-git clone https://github.com/kimliss/dotfiles.git ~/dotfiles
-
-# 进入目录
-cd ~/dotfiles
-
-# 运行安装脚本
-chmod +x install.sh
+git clone https://github.com/kimliss/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+chmod +x install.sh uninstall.sh
 ./install.sh
-
-# 使配置生效
 source ~/.zshrc
 ```
 
-## 使用说明
+### 方式二：一键脚本
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kimliss/dotfiles/main/install.sh)"
+```
+
+## 📖 使用说明
 
 ### 代理管理
 ```bash
-pon           # 开启代理
-poff          # 关闭代理
-pst           # 查看代理状态
-ptest         # 测试代理连接
+pon            # 开启代理
+poff           # 关闭代理
+pst            # 查看代理状态
+ptest          # 测试代理连接
 ```
 
-### 自定义配置
-
-安装后可以修改代理配置：
+### Git 别名
 ```bash
-vim ~/.zshrc  # 找到 PROXY_HOST 和 PROXY_PORT 修改
+gs             # git status
+ga             # git add
+gc             # git commit
+gp             # git push
+gl             # git pull
+glog           # 美化的 git log
 ```
 
-## 配置说明
-
-### Zsh 配置
-- 代理快速开关
-- 常用命令别名
-- Git 集成
-
-### Git 配置
-- 常用别名
-- 默认编辑器
-- 颜色配置
-
-## 卸载
+### 其他别名
 ```bash
-# 恢复备份的配置文件
-mv ~/.zshrc.backup.YYYYMMDD_HHMMSS ~/.zshrc
-source ~/.zshrc
+ll             # ls -lah
+..             # cd ..
+reload         # 重新加载 zsh 配置
+zshconfig      # 编辑 .zshrc
 ```
 
-## 许可证
+## 🔧 自定义配置
 
-MIT License
+### 修改代理地址
+
+编辑 `config/zshrc.d/proxy.conf`:
+```bash
+PROXY_HOST="127.0.0.1"
+PROXY_PORT="7890"
+```
+
+### 添加自己的别名
+
+编辑 `config/zshrc.d/aliases.zsh`，添加你的别名。
+
+### 添加环境变量
+
+编辑 `config/zshrc.d/env.zsh`，添加你的环境变量。
+
+## 🗑️ 卸载
+```bash
+cd ~/.dotfiles
+./uninstall.sh
+```
+
+卸载脚本会：
+1. 从 `.zshrc` 和 `.gitconfig` 移除配置引用
+2. 提供恢复备份选项
+3. 保留 dotfiles 目录和备份文件
+
+## 📁 目录结构

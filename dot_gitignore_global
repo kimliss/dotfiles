@@ -1,0 +1,11 @@
+*~
+.DS_Store
+UserInterfaceState.xcuserstate
+.env
+.env.*
+!.env.example
+.envrc
+*.env
+env.local
+env.*.local
+*.pem

@@ -1,0 +1,12 @@
+# Taps
+# tap "..."
+
+# Formulae
+brew "git"
+brew "jq"
+brew "fzf"
+brew "ripgrep"
+brew "chezmoi"
+
+# Casks
+cask "visual-studio-code"

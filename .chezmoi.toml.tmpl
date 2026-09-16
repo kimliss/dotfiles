@@ -1,0 +1,16 @@
+{{- $email := promptStringOnce . "email" "Git email" -}}
+{{- $name := promptStringOnce . "name" "Git name" -}}
+{{- $gitProxy := promptStringOnce . "gitProxy" "Git proxy (leave empty to disable, e.g. http://127.0.0.1:7890)" -}}
+
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+destDir = {{ .chezmoi.destDir | quote }}
+
+[data]
+    name = {{ $name | quote }}
+    email = {{ $email | quote }}
+
+    os = {{ .chezmoi.os | quote }}
+    arch = {{ .chezmoi.arch | quote }}
+    hostname = {{ .chezmoi.hostname | quote }}
+
+    gitProxy = {{ $gitProxy | quote }}

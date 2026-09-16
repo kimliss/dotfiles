@@ -13,4 +13,6 @@ if [ ! -f "$BREWFILE" ]; then
     exit 1
 fi
 
+# Brewfile: {{ include "dot_Brewfile" | sha256sum }}
+
 brew bundle --file="$BREWFILE"

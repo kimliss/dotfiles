@@ -7,6 +7,7 @@ brew "git"
 brew "jq"
 brew "fzf"
 brew "ripgrep"
+brew "mysql-client"
 
 # hashicorp
 brew "hashicorp/tap/terraform"

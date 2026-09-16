@@ -1,11 +1,15 @@
 # Taps
 # tap "..."
+tap "hashicorp/tap"
 
 # Formulae
 brew "git"
 brew "jq"
 brew "fzf"
 brew "ripgrep"
+
+# hashicorp
+brew "hashicorp/tap/terraform"
 
 # Casks
 cask "visual-studio-code"

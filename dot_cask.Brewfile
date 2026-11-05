@@ -7,6 +7,7 @@ brew "jq"
 brew "fzf"
 brew "ripgrep"
 brew "chezmoi"
+brew "tmux"
 
 # Casks
 cask "android-commandlinetools"

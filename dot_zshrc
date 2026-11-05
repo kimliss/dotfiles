@@ -35,3 +35,13 @@ export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 # Developer Setting
 export DEV_ROOT=$HOME/Developer
 export DEV_HOME=$HOME/.devhome
+
+# TMUX
+alias t="tmux"
+alias tn="tmux new -s"
+alias ta="tmux attach -t"
+alias tl="tmux ls"
+alias tk="tmux kill-session -t"
+
+## 智能进入 tmux（最爽）
+alias ts="tmux new -A -s main"
